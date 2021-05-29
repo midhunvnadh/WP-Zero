@@ -1,35 +1,23 @@
 <?php
+
 /**
  * The header for the theme
  *
  */
 
+use function Composer\Autoload\includeFile;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<?php wp_head(); ?>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/3dbd53fd56.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	
-<a class="screen-reader-text" href="#content">Skip to content</a>
-
-<header class="site-header">
-	<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-
-	<nav class="main-navigation">
-		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'menu-1',
-			'menu_id'        => 'primary-menu',
-		) );
-		?>
-	</nav>
-</header>
-
-<div id="content" class="site-content">
-	
+    <a class="screen-reader-text" href="#content">Skip to content</a>

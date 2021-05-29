@@ -9,6 +9,10 @@ License: GNU General Public License v2 or later
 Text Domain: untheme
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Rubik", sans-serif;
+}
 /* Text meant only for screen readers. */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -21,4 +25,25 @@ Text Domain: untheme
   overflow: hidden;
   position: absolute !important;
   word-wrap: normal !important;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #AAA;
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(90deg,
+      rgba(0, 0, 0, .2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(0, 0, 0, .2) 50%,
+      rgba(0, 0, 0, .2) 75%,
+      transparent 75%,
+      transparent)
 }

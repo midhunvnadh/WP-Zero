@@ -1,29 +1,22 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- */
-
 get_header();
+
+get_template_part('template-parts/theme-common/a', get_post_type());
+
 ?>
+								<?php
+								while (have_posts()) : the_post();
+									setPostViews(get_the_ID());
+									get_template_part('template-parts/page-content', get_post_type());
 
-<main id="main" class="site-main" role="main">
+									// If comments are open or we have at least one comment, load up the comment template.
+									if (comments_open() || get_comments_number()) :
+										comments_template();
+									endif;
 
-	<?php
-	while ( have_posts() ) : the_post();
-
-		get_template_part( 'template-parts/content', get_post_type() );
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) :
-			comments_template();
-		endif;
-
-	endwhile;
-	?>
-
-</main>
-
+								endwhile;
+								?>
 <?php
-get_sidebar();
+get_template_part('template-parts/theme-common/b', get_post_type());
 get_footer();
+?>

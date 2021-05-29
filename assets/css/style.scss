@@ -1,0 +1,140 @@
+body {
+  .app-start {
+    .main-row {
+      .main-col-1 {
+        .site-side {
+          overflow-y: auto;
+          position: sticky;
+          top: 0;
+          background: #c8d6e1;
+          height: 100vh;
+          flex-direction: column;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          .font-weight-bold {
+            font-weight: bolder;
+          }
+          * {
+            color: #f5fdfe;
+          }
+          .site-icon-disp {
+            margin: 15px 0;
+            min-height: 150px;
+            min-width: 150px;
+            background: #fff;
+            border-radius: 50%;
+          }
+        }
+      }
+      @media (min-width: 1200px) {
+        .main-col-1 {
+          width: 25%;
+        }
+        .main-col-2 {
+          width: 75%;
+        }
+      }
+      @media (min-width: 1820px) {
+        .main-col-1 {
+          width: 16.6666666667%;
+        }
+        .main-col-2 {
+          width: 83.3333333333%;
+        }
+      }
+      @media (max-width: 1000px) {
+        .main-col-1 {
+          position: fixed;
+          .site-side {
+            transform: translate(-100%);
+          }
+        }
+      }
+    }
+  }
+  overflow-x: hidden;
+  .min-height-100 {
+    min-height: 100vh;
+  }
+  //background: #333;
+  margin: 3;
+  .site-content {
+    background: #fff;
+  }
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: #fafafa;
+    z-index: 99;
+    .container {
+      h5 {
+        color: #32181d;
+      }
+      p {
+        color: #8a8987;
+      }
+    }
+  }
+  .searchform {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+  }
+  .site-footer {
+    background: #9ab9ca;
+    text-align: center;
+    color: #697b7d;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+  .post-entry {
+    * {
+      transition: all 0.3s ease-in-out;
+    }
+    .bg-white {
+      .rounded {
+        border-radius: 3px;
+      }
+      overflow: hidden;
+    }
+    .row {
+      .container-image-holder {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        .image {
+          height: 100%;
+          width: 100%;
+          background-size: cover;
+          background-position: 50% 50%;
+          transform: scale(1.6);
+        }
+      }
+    }
+    &:hover {
+      .row {
+        .container-image-holder {
+          .image {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+  .rounded-circle {
+    border-radius: 50%;
+
+    &.icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      width: 35px;
+    }
+  }
+}
