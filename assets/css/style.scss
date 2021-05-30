@@ -171,4 +171,15 @@ body {
       width: 35px;
     }
   }
+  .widgets-sidebar {
+    .widget {
+      padding: 1.5em 0;
+      h2.widget-title {
+        font-size: 21px;
+      }
+      ul {
+        list-style-type: none;
+      }
+    }
+  }
 }

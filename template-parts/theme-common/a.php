@@ -6,7 +6,7 @@
         <div class="main-col-2 col-lg-10 col-sm-12 px-0">
             <div id="content" class="site-content">
                 <main id="main" class="site-main" role="main">
-                    <header class="site-header py-4">
+                    <header class="site-header py-4" id="site-header">
                         <div class="row">
                             <div class="col-lg-8 col-sm-12 px-0 text-center">
                                 <div class="container">
@@ -27,4 +27,4 @@
                     </header>
                     <div class="row">
                         <div class="col-lg-8">
-                            <div class="container py-5 min-height-100">
+                            <div class="container py-5 px-5 min-height-100">

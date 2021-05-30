@@ -15,7 +15,15 @@ function readingTime($text)
 		<div class="row">
 			<div class="col-3 px-0">
 				<div class="container-image-holder">
-					<div class="image" style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/sample.jpg'; ?>);"></div>
+					<?php
+					if (has_post_thumbnail()) :
+					?>
+						<div class="image" style="background-image: url(<?php the_post_thumbnail() ?>);"></div>
+					<?php
+					else :
+					?>
+						<div class="image" style="background-image: url(<?php the_sample_image(); ?>);"></div>
+					<?php endif; ?>
 				</div>
 			</div>
 			<div class="col-9 py-3 px-0">

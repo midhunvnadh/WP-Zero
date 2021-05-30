@@ -104,3 +104,7 @@ function setPostViews($postID)
 }
 // Remove issues with prefetching adding extra views
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+function the_sample_image()
+{
+	echo get_template_directory_uri() . "/assets/images/sample.jpg";
+}

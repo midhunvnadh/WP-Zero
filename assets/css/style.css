@@ -196,4 +196,16 @@ body .rounded-circle.icon {
   height: 35px;
   width: 35px;
 }
+
+body .widgets-sidebar .widget {
+  padding: 1.5em 0;
+}
+
+body .widgets-sidebar .widget h2.widget-title {
+  font-size: 21px;
+}
+
+body .widgets-sidebar .widget ul {
+  list-style-type: none;
+}
 /*# sourceMappingURL=style.css.map */
