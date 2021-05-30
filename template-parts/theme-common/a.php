@@ -13,7 +13,6 @@
                                     <div class="content">
                                         <h5><?php bloginfo('title'); ?> - <?php bloginfo('description'); ?></h5>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <button class="btn btn-primary btn-md">A Button</button>
                                     </div>
                                 </div>
                             </div>

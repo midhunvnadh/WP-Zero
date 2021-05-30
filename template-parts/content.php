@@ -25,11 +25,12 @@ function readingTime($text)
 					</header>
 					<div class="text-muted py-2">
 						Published
-						<?php get_the_date(); ?>
-						&nbsp;<i class="fas fa-circle" style="font-size: 6px;"></i>&nbsp;
+						<?php get_the_date(); ?><br />
 						<?php echo readingTime(get_the_content()); ?>&nbsp;
 						<i class="fas fa-circle" style="font-size: 6px;"></i>
 						&nbsp;<?php echo getPostViews(get_the_ID()); ?> &nbsp;
+						<i class="fas fa-circle" style="font-size: 6px;"></i>
+						&nbsp; 10 pages &nbsp;
 					</div>
 					<div class="entry-content">
 						<?php the_excerpt(); ?>
