@@ -75,10 +75,10 @@ body .app-start .main-row .main-col-1 .site-side .menu ul li button {
 
 @media (min-width: 1200px) {
   body .app-start .main-row .main-col-1 {
-    width: 25%;
+    width: 23%;
   }
   body .app-start .main-row .main-col-2 {
-    width: 75%;
+    width: 77%;
   }
 }
 
@@ -138,9 +138,9 @@ body .searchform {
 }
 
 body .site-footer {
-  background: #9ab9ca;
+  background: #213141;
   text-align: center;
-  color: #697b7d;
+  color: #6c757d;
 }
 
 body a {
@@ -229,6 +229,10 @@ body .widgets-sidebar .widget.widget_ecwd_widget {
   border-radius: 6px;
 }
 
+body .widgets-sidebar .widget.widget_ecwd_widget .ecwd-widget-mini.ecwd_calendar {
+  width: 100%;
+}
+
 body .widgets-sidebar .widget.widget_ecwd_widget * {
   font-family: "Rubik", sans-serif !important;
 }
@@ -257,12 +261,18 @@ body .widgets-sidebar .widget.widget_ecwd_widget table {
 
 body .widgets-sidebar .widget.widget_ecwd_widget table td,
 body .widgets-sidebar .widget.widget_ecwd_widget table th,
-body .widgets-sidebar .widget.widget_ecwd_widget table tr {
-  border: none;
+body .widgets-sidebar .widget.widget_ecwd_widget table tr,
+body .widgets-sidebar .widget.widget_ecwd_widget table td.day-with-date,
+body .widgets-sidebar .widget.widget_ecwd_widget table td.no-events {
+  border: none !important;
 }
 
 body .widgets-sidebar .widget.widget_ecwd_widget .ecwd_calendar_view_dropdown {
   display: none;
+}
+
+body .widgets-sidebar .widget.widget_ecwd_widget .calendar_main .ecwd_calendar.ecwd-widget-mini {
+  max-width: 320px;
 }
 
 body .widgets-sidebar .widget.widget_ecwd_widget .calendar-head.ecwd_calendar_prev_next {
@@ -286,16 +296,13 @@ body .widgets-sidebar .widget.widget_ecwd_widget .calendar-head.ecwd_calendar_pr
   font-weight: bold;
 }
 
-body .widgets-sidebar .widget.widget_ecwd_widget .ecwd_theme_calendar
-table.cal_blue.ecwd_calendar_container
-.normal-day-heading,
-body .widgets-sidebar .widget.widget_ecwd_widget .ecwd_theme_calendar
-table.cal_blue.ecwd_calendar_container
-.weekend-heading {
+body .widgets-sidebar .widget.widget_ecwd_widget th.normal-day-heading,
+body .widgets-sidebar .widget.widget_ecwd_widget th.weekend-heading {
   padding: 6px;
   background: #fa613f !important;
   color: #fff !important;
   font-weight: bold;
+  border: 0 !important;
 }
 
 body .widgets-sidebar .widget.widget_ecwd_widget .current-month {
@@ -311,7 +318,7 @@ body .widgets-sidebar .widget.widget_ecwd_widget .ecwd-events-day-details .event
   min-height: 30px;
   left: 0;
   right: 0;
-  top: -50px;
+  top: -80px;
   z-index: 98;
   background-color: #fff;
   border-radius: 3px;
@@ -335,6 +342,17 @@ body .widgets-sidebar .widget.widget_ecwd_widget .ecwd-events-day-details .event
   padding: 12px 12px;
 }
 
+body .widgets-sidebar .widget.widget_ecwd_widget .day-with-date.has-events {
+  position: relative;
+  z-index: 1;
+  color: #fa613f !important;
+  font-weight: bolder;
+}
+
+body .widgets-sidebar .widget.widget_ecwd_widget .day-with-date.has-events:hover {
+  font-size: 20px !important;
+}
+
 body .widgets-sidebar .widget.widget_wpb_widget .container-fluid .row .column * {
   color: var(--bs-secondary);
 }
@@ -354,5 +372,141 @@ body .widgets-sidebar .widget.widget_wpb_widget .container-fluid .row .column * 
 body .navigation.pagination .current button {
   background: var(--bs-secondary);
   color: #fff;
+}
+
+body .woocommerce .woocommerce-MyAccount-navigation ul {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+body .woocommerce .woocommerce-MyAccount-navigation ul li {
+  margin-bottom: 12px;
+}
+
+body .woocommerce .woocommerce-MyAccount-navigation ul li a {
+  display: block;
+  color: #000;
+  background: #eee;
+  padding: 14px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 19px;
+  position: relative;
+}
+
+body .woocommerce .woocommerce-MyAccount-navigation ul li a::after {
+  content: ">";
+  position: absolute;
+  right: 2em;
+}
+
+body .woocommerce .woocommerce-MyAccount-content {
+  height: 100%;
+  background: #eee;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login, body .woocommerce-form.woocommerce-form-login.register, body .woocommerce-form.woocommerce-form-register.login, body .woocommerce-form.woocommerce-form-register.register {
+  border: 0;
+  background: var(--bs-light);
+}
+
+body .woocommerce-form.woocommerce-form-login.login label, body .woocommerce-form.woocommerce-form-login.register label, body .woocommerce-form.woocommerce-form-register.login label, body .woocommerce-form.woocommerce-form-register.register label {
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-margin-start: 0.2em;
+          margin-inline-start: 0.2em;
+}
+
+body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login.login input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-login.login input, body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login.register input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-login.register input, body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register.login input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-register.login input, body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register.register input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-register.register input {
+  height: 40px;
+  font-size: 21px;
+  border-radius: 600px;
+  border: none;
+  padding: 6px 16px;
+  background: #eee;
+  margin-bottom: 8px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login.login input::placeholder,
+body .woocommerce-form.woocommerce-form-login.login input, body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login.register input::placeholder,
+body .woocommerce-form.woocommerce-form-login.register input, body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register.login input::placeholder,
+body .woocommerce-form.woocommerce-form-register.login input, body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register.register input::placeholder,
+body .woocommerce-form.woocommerce-form-register.register input {
+  height: 40px;
+  font-size: 21px;
+  border-radius: 600px;
+  border: none;
+  padding: 6px 16px;
+  background: #eee;
+  margin-bottom: 8px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"] {
+  margin: 10px 0;
+  margin-right: 10px;
+  letter-spacing: 1px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__input-checkbox {
+  width: 20px;
+  height: 20px;
+  margin: 1em 0;
+  margin-right: 10px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-login.register .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.login .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.register .woocommerce-LostPassword.lost_password {
+  padding: 10px 0px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-login.register .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.login .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.register .woocommerce-LostPassword.lost_password a {
+  color: var(--bs-primary);
 }
 /*# sourceMappingURL=style.css.map */
