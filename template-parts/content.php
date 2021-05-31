@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="post-entry my-5">
+<article id="post-<?php the_ID(); ?>" class="post-entry mb-5">
 	<div class="bg-white shadow rounded">
 		<div class="row">
 			<div class="col-3 px-0">
@@ -29,7 +29,7 @@
 						&nbsp; 10 pages &nbsp;
 					</div>
 					<div class="entry-content">
-						<?php echo substr(get_the_excerpt(), 0, 120) . "..."; ?>
+						<?php echo implode(' ', array_slice(explode(' ', get_the_excerpt()), 0, 10)) . "..."; ?>
 					</div>
 					<div class="py-2">
 						<a href="<?php the_permalink(); ?>" class="text-decoration-none">Read <i class="fas fa-arrow-right"></i></a>

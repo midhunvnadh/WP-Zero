@@ -350,4 +350,9 @@ body .widgets-sidebar .widget.widget_wpb_widget .container-fluid .row .column * 
     width: 50%;
   }
 }
+
+body .navigation.pagination .current button {
+  background: var(--bs-secondary);
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

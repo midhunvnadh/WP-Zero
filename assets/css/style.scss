@@ -308,4 +308,12 @@ body {
       }
     }
   }
+  .navigation.pagination {
+    .current {
+      button {
+        background: var(--bs-secondary);
+        color: #fff;
+      }
+    }
+  }
 }
