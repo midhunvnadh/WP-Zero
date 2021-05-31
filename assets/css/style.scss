@@ -1,3 +1,7 @@
+html {
+  margin-top: 0 !important;
+  margin: 0 !important;
+}
 body {
   .app-start {
     .main-row {
@@ -173,12 +177,134 @@ body {
   }
   .widgets-sidebar {
     .widget {
+      position: relative;
       padding: 1.5em 0;
       h2.widget-title {
         font-size: 21px;
+        padding: 0.6em 0em;
       }
       ul {
         list-style-type: none;
+        padding-inline-start: 0;
+        margin-inline-start: 0;
+      }
+      .ecwd-widget-19 {
+        overflow: hidden;
+        border-radius: 7px;
+      }
+      &.widget_ecwd_widget {
+        * {
+          font-family: "Rubik", sans-serif !important;
+        }
+        .ecwd_theme_calendar
+          table.cal_blue.ecwd_calendar_container
+          .normal-day-heading,
+        .ecwd_theme_calendar
+          table.cal_blue.ecwd_calendar_container
+          .weekend-heading,
+        .ecwd_theme_calendar
+          table.cal_blue.ecwd_calendar_container
+          .day-with-date {
+          border: none !important;
+          font-weight: bold;
+        }
+        * {
+          border: none !important;
+        }
+        table {
+          border: 1px solid #ccc;
+          border-collapse: collapse;
+          td,
+          th,
+          tr {
+            border: none;
+          }
+        }
+        border-radius: 6px;
+        .ecwd_calendar_view_dropdown {
+          display: none;
+        }
+        .calendar-head.ecwd_calendar_prev_next {
+          border: none;
+          background-color: #1a373f !important;
+          padding: 1em 2em;
+          * {
+            color: #fff !important;
+          }
+          .previous,
+          .next {
+            span {
+              font-size: 28px;
+              font-weight: bold;
+            }
+            border: none !important;
+          }
+        }
+        .ecwd_theme_calendar
+          table.cal_blue.ecwd_calendar_container
+          .normal-day-heading,
+        .ecwd_theme_calendar
+          table.cal_blue.ecwd_calendar_container
+          .weekend-heading {
+          padding: 6px;
+          background: #fa613f !important;
+          color: #fff !important;
+          font-weight: bold;
+        }
+        .current-month {
+          a {
+            display: none;
+          }
+          border: none !important;
+        }
+        .ecwd-events-day-details {
+          .events {
+            position: absolute;
+            min-height: 30px;
+            left: 0;
+            right: 0;
+            top: -50px;
+            z-index: 98;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 0 8px 21px -7px rgba(0, 0, 0, 0.5);
+            h5 {
+              a {
+                font-size: 32px;
+                font-weight: bold;
+                text-decoration: none;
+              }
+            }
+            .ecwd-time,
+            .ecwd-date,
+            .ecwd-detalis {
+              padding: 0.6em 1em;
+            }
+
+            .ecwd-detalis {
+              p {
+                padding: 12px 12px;
+              }
+            }
+          }
+        }
+      }
+      &.widget_wpb_widget {
+        .container-fluid {
+          .row {
+            .column {
+              * {
+                color: var(--bs-secondary);
+              }
+              @media screen and (min-width: 1820px) {
+                width: 50%;
+              }
+              @media screen and (max-width: 992px) {
+                width: 50%;
+              }
+            }
+          }
+        }
       }
     }
   }

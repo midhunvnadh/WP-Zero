@@ -1,16 +1,4 @@
-<?php
-
-/**
- * The template for displaying the footer
- *
- */
-
-?>
-
-
 <?php wp_footer(); ?>
-
-
 
 <footer class="site-footer py-3">
     <div>About Us | Terms and Conditions | Contact Us | Privacy Policy</div>

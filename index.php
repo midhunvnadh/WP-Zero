@@ -5,9 +5,7 @@ get_template_part('template-parts/theme-common/a', get_post_type());
 
 <?php
 if (have_posts()) : while (have_posts()) : the_post();
-
 		get_template_part('template-parts/content', get_post_type());
-
 	endwhile;
 
 	the_posts_pagination(array(
@@ -15,10 +13,8 @@ if (have_posts()) : while (have_posts()) : the_post();
 		'next_text' => __('Next page'),
 	));
 
-else :
+endif;
 ?>
-	<h1>No Posts Available!</h1>
-<?php endif; ?>
 
 <?php
 get_template_part('template-parts/theme-common/b', get_post_type());

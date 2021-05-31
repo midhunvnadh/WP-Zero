@@ -27,4 +27,4 @@
                     </header>
                     <div class="row">
                         <div class="col-lg-8">
-                            <div class="container py-5 px-5 min-height-100">
+                            <div class="container py-5 px-5">

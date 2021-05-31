@@ -1,16 +1,4 @@
-<?php
-function readingTime($text)
-{
-	$wordsPerMinute = 200;
-	$noOfWords = explode(" ", $text);
-	$minutes = sizeof($noOfWords) / $wordsPerMinute;
-	if ($minutes <= 1) {
-		return "1 minute read";
-	}
-	return "$minutes minutes read";
-}
-?>
-<article id="post-<?php the_ID(); ?>" class="post-entry">
+<article id="post-<?php the_ID(); ?>" class="post-entry my-5">
 	<div class="bg-white shadow rounded">
 		<div class="row">
 			<div class="col-3 px-0">
@@ -41,9 +29,9 @@ function readingTime($text)
 						&nbsp; 10 pages &nbsp;
 					</div>
 					<div class="entry-content">
-						<?php the_excerpt(); ?>
+						<?php echo substr(get_the_excerpt(), 0, 120) . "..."; ?>
 					</div>
-					<div>
+					<div class="py-2">
 						<a href="<?php the_permalink(); ?>" class="text-decoration-none">Read <i class="fas fa-arrow-right"></i></a>
 					</div>
 				</div>
