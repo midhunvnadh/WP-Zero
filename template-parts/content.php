@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" class="post-entry mb-5">
 	<div class="bg-white shadow rounded">
 		<div class="row">
-			<div class="col-3 px-0">
+			<div class="col-lg-3 col-sm-12 px-0">
 				<div class="container-image-holder">
 					<?php
 					if (has_post_thumbnail()) :
@@ -14,7 +14,7 @@
 					<?php endif; ?>
 				</div>
 			</div>
-			<div class="col-9 py-3 px-0">
+			<div class="col-lg-9 col-sm-12 py-3 px-0">
 				<div class="container">
 					<header class="entry-header">
 						<h6 class="m-0"><a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark"><?php the_title(); ?></a></h6>

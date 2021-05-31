@@ -3,7 +3,7 @@
 <div class="col-lg-4 widgets-sidebar py-2">
     <div class="container h-100">
         <?php
-        if (is_shop_page()) {
+        if (!is_widget_bar_less_page()) {
             dynamic_sidebar();
         }
         ?>

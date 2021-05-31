@@ -232,3 +232,10 @@ function readingTime($text)
 	}
 	return "$minutes minutes read";
 }
+
+function is_widget_bar_less_page()
+{
+	$dont_display_on = array("/shop/", "/cart/", '/my-account/', '/checkout/');
+	$path = $_SERVER['REQUEST_URI'];
+	return !(is_single() || is_home() ||  !(in_array($path, $dont_display_on)));
+}

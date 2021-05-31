@@ -26,5 +26,10 @@
                         </div>
                     </header>
                     <div class="row">
-                        <div class="col-lg-8">
-                            <div class="container py-5 px-5">
+                        <?php if (is_widget_bar_less_page()) { ?>
+                            <div class="col-lg-12">
+                                <div class="container p-3 posts-holder">
+                                <?php } else { ?>
+                                    <div class="col-lg-8">
+                                        <div class="container p-5 posts-holder">
+                                        <?php } ?>
