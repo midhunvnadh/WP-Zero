@@ -1,9 +1,11 @@
 </div>
 </div>
-<div class="col-lg-4 widgets-sidebar py-4">
-    <div class="container">
+<div class="col-lg-4 widgets-sidebar py-2">
+    <div class="container h-100">
         <?php
-        dynamic_sidebar();
+        if (is_shop_page()) {
+            dynamic_sidebar();
+        }
         ?>
     </div>
 </div>

@@ -162,11 +162,11 @@ class wpb_widget extends WP_Widget
 				<div class='row text-start'>
 					<div class='column text-start'>
 						<a class="btn btn-link text-decoration-none w-100 text-start" href="
-						<?php echo $category_link; ?>"><i class='<?php echo $icon_name; ?>'></i> <span><?php echo $category_name ?></span></a>
+						<?php echo $category_link; ?>"><i class='<?php echo $icon_name; ?>'></i><span><?php echo $category_name ?></span></a>
 					</div>
 					<div class='column text-start'>
 						<a class="btn btn-link text-decoration-none w-100 text-start" href="
-						<?php echo $category2_link; ?>"><i class='<?php echo $icon2_name; ?>'></i> <span><?php echo $category2_name ?></span></a>
+						<?php echo $category2_link; ?>"><i class='<?php echo $icon2_name; ?>'></i><span><?php echo $category2_name ?></span></a>
 					</div>
 				</div>
 			</div>
@@ -184,7 +184,7 @@ class wpb_widget extends WP_Widget
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Widget Title:'); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" placeholder="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		<?php
 
@@ -201,7 +201,7 @@ class wpb_widget extends WP_Widget
 		?>
 			<p>
 				<label for="<?php echo $this->get_field_id($category_unique); ?>"><?php _e("Icon for $category_name:"); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id($category_unique); ?>" name="<?php echo $this->get_field_name($category_unique); ?>" placeholder="<?php echo $this->get_field_name($category_unique); ?>" type="text" value="<?php echo esc_attr($value); ?>" />
+				<input class="widefat" id="<?php echo $this->get_field_id($category_unique); ?>" name="<?php echo $this->get_field_name($category_unique); ?>" type="text" value="<?php echo esc_attr($value); ?>" />
 			</p>
 <?php
 		}
