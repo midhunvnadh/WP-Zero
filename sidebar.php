@@ -1,7 +1,7 @@
 <aside class="site-side p-3 text-center">
 	<h3 class="site-title font-weight-bold py-1"></h3>
 	<div class="site-icon-disp"></div>
-	<p class="site-desc text-secondary pb-3"><?php bloginfo('description'); ?>The answer is yes. You could run php code in editor. But that is not for proper way of adding images. Instead, you should create shortcodes to get those images from theme folder or use like below codes
+	<p class="site-desc text-secondary pb-3"><?php bloginfo('description'); ?>. The answer is yes. You could run php code in editor.
 
 
 	</p>

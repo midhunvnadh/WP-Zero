@@ -5,7 +5,99 @@ html {
 
 body {
   overflow-x: hidden;
-  margin: 3;
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+body .sm-header-holder .nav-toggle-holder {
+  display: none;
+}
+
+@media screen and (max-width: 1196px) {
+  body .site-header {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+  }
+  body .sm-header-holder {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body .sm-header-holder .nav-toggle-holder {
+    display: block;
+  }
+  body .sm-header-holder .nav-toggle-holder .navigation-toggle {
+    font-size: 30px;
+  }
+  body .sm-header-holder .content {
+    -webkit-margin-start: 1em;
+            margin-inline-start: 1em;
+  }
+}
+
+body .sm-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 99999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .sm-nav .close-holder {
+  padding: 0 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .sm-nav .close-holder .close {
+  font-size: 56px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body .sm-nav ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  list-style-type: none;
+}
+
+body .sm-nav ul li {
+  padding: 16px 0;
+}
+
+body .sm-nav ul li a {
+  font-size: 32px;
+  color: #fff;
 }
 
 body .app-start .main-row .main-col-1 .site-side {
@@ -28,6 +120,10 @@ body .app-start .main-row .main-col-1 .site-side {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body .app-start .main-row .main-col-1 .site-side .site-desc {
+  color: #213141 !important;
 }
 
 body .app-start .main-row .main-col-1 .site-side .font-weight-bold {
@@ -66,11 +162,12 @@ body .app-start .main-row .main-col-1 .site-side .menu ul li:hover button, body 
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 75%, transparent 75%, transparent);
   color: var(--bs-light);
   font-weight: bolder;
-  background-color: var(--bs-secondary);
+  background-color: #213141;
 }
 
 body .app-start .main-row .main-col-1 .site-side .menu ul li button {
-  color: var(--bs-secondary);
+  color: #213141;
+  border-color: #213141 !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -97,7 +194,7 @@ body .app-start .main-row .main-col-1 .site-side .menu ul li button {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1194px) {
   body .app-start .main-row .main-col-1 {
     position: fixed;
   }
@@ -111,8 +208,20 @@ body .min-height-100 {
   min-height: 100vh;
 }
 
+@media screen and (max-width: 1196px) {
+  body .site-main {
+    padding-top: 5em !important;
+  }
+}
+
 body .site-content {
   background: #fff;
+}
+
+@media screen and (min-width: 1196px) {
+  body .site-content.container-fluid {
+    padding: 0 !important;
+  }
 }
 
 body .site-header {
@@ -142,6 +251,9 @@ body .site-header .container p {
   body .site-header .content p {
     display: none;
   }
+  body .site-header .site-desc {
+    display: none;
+  }
 }
 
 body .searchform {
@@ -160,7 +272,7 @@ body .site-footer {
   background: #213141;
   text-align: center;
   color: #6c757d;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
 body a {
@@ -184,25 +296,38 @@ body .post-entry .bg-white .rounded {
   border-radius: 3px;
 }
 
+body .post-entry .row {
+  padding: 0.6em;
+}
+
 body .post-entry .row .container-image-holder {
+  border-radius: 3px;
   overflow: hidden;
   height: 100%;
   width: 100%;
   min-height: 139px;
+  border: 0.5em solid #fff;
+}
+
+@media screen and (min-width: 1196px) {
+  body .post-entry .row .container-image-holder {
+    border-left-width: 1em;
+  }
 }
 
 body .post-entry .row .container-image-holder .image {
-  height: 100%;
-  width: 100%;
   background-size: cover;
   background-position: 50% 50%;
-  -webkit-transform: scale(1.6);
-          transform: scale(1.6);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
 }
 
 body .post-entry:hover .row .container-image-holder .image {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 body .rounded-circle {
@@ -390,6 +515,10 @@ body .widgets-sidebar .widget.widget_wpb_widget .container-fluid {
   padding: 0;
 }
 
+body .widgets-sidebar .widget.widget_wpb_widget .container-fluid .row .column {
+  padding: 6px 0;
+}
+
 body .widgets-sidebar .widget.widget_wpb_widget .container-fluid .row .column * {
   text-transform: uppercase;
 }
@@ -417,9 +546,18 @@ body .widgets-sidebar .widget.widget_wpb_widget .container-fluid .row .column i 
   }
 }
 
+body .navigation.pagination button {
+  border-color: #213141;
+}
+
+body .navigation.pagination button:hover {
+  background-color: #213141;
+}
+
 body .navigation.pagination .current button {
-  background: var(--bs-secondary);
+  background: #213141;
   color: #fff;
+  border: #213141;
 }
 
 body .woocommerce .woocommerce-MyAccount-navigation ul {
@@ -457,45 +595,146 @@ body .woocommerce .woocommerce-MyAccount-content {
   border-radius: 6px;
 }
 
+body .woocommerce-form .woocommerce-cart-form__cart-item .input-text#coupon_code,
+body .woocommerce .woocommerce-cart-form__cart-item .input-text#coupon_code {
+  width: 200px !important;
+}
+
+body .woocommerce-form .woocommerce-cart-form__cart-item input,
+body .woocommerce .woocommerce-cart-form__cart-item input {
+  min-height: 40px;
+  font-size: 18px;
+  border-radius: 600px;
+  border: none;
+  padding: 6px 16px;
+  background: #eee;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
 body .woocommerce-form.woocommerce-form-login.lost_reset_password, body .woocommerce-form.woocommerce-form-register.lost_reset_password,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password,
 body .woocommerce.woocommerce-form-login.lost_reset_password,
 body .woocommerce.woocommerce-form-register.lost_reset_password,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password,
+body .woocommerce .woocommerce-checkout.lost_reset_password {
   padding: 12px;
 }
 
-body .woocommerce-form.woocommerce-form-login.login, body .woocommerce-form.woocommerce-form-login.register, body .woocommerce-form.woocommerce-form-login.lost_reset_password, body .woocommerce-form.woocommerce-form-register.login, body .woocommerce-form.woocommerce-form-register.register, body .woocommerce-form.woocommerce-form-register.lost_reset_password,
+body .woocommerce-form.woocommerce-form-login #order_review_heading, body .woocommerce-form.woocommerce-form-register #order_review_heading,
+body .woocommerce-form .woocommerce-ResetPassword #order_review_heading,
+body .woocommerce-form .woocommerce-checkout #order_review_heading,
+body .woocommerce.woocommerce-form-login #order_review_heading,
+body .woocommerce.woocommerce-form-register #order_review_heading,
+body .woocommerce .woocommerce-ResetPassword #order_review_heading,
+body .woocommerce .woocommerce-checkout #order_review_heading {
+  padding: 2em 0 0 0;
+}
+
+body .woocommerce-form.woocommerce-form-login .select2-selection__arrow, body .woocommerce-form.woocommerce-form-register .select2-selection__arrow,
+body .woocommerce-form .woocommerce-ResetPassword .select2-selection__arrow,
+body .woocommerce-form .woocommerce-checkout .select2-selection__arrow,
+body .woocommerce.woocommerce-form-login .select2-selection__arrow,
+body .woocommerce.woocommerce-form-register .select2-selection__arrow,
+body .woocommerce .woocommerce-ResetPassword .select2-selection__arrow,
+body .woocommerce .woocommerce-checkout .select2-selection__arrow {
+  right: 10px;
+  top: 6px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login, body .woocommerce-form.woocommerce-form-login.register, body .woocommerce-form.woocommerce-form-login.lost_reset_password,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order, body .woocommerce-form.woocommerce-form-register.login, body .woocommerce-form.woocommerce-form-register.register, body .woocommerce-form.woocommerce-form-register.lost_reset_password,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order,
 body .woocommerce-form .woocommerce-ResetPassword.login,
 body .woocommerce-form .woocommerce-ResetPassword.register,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order,
+body .woocommerce-form .woocommerce-checkout.login,
+body .woocommerce-form .woocommerce-checkout.register,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order,
 body .woocommerce.woocommerce-form-login.login,
 body .woocommerce.woocommerce-form-login.register,
 body .woocommerce.woocommerce-form-login.lost_reset_password,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order,
 body .woocommerce.woocommerce-form-register.login,
 body .woocommerce.woocommerce-form-register.register,
 body .woocommerce.woocommerce-form-register.lost_reset_password,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order,
 body .woocommerce .woocommerce-ResetPassword.login,
 body .woocommerce .woocommerce-ResetPassword.register,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order,
+body .woocommerce .woocommerce-checkout.login,
+body .woocommerce .woocommerce-checkout.register,
+body .woocommerce .woocommerce-checkout.lost_reset_password,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order {
+  padding: 1em;
   height: 100%;
   border: 0;
   background: var(--bs-light);
 }
 
-body .woocommerce-form.woocommerce-form-login.login label, body .woocommerce-form.woocommerce-form-login.register label, body .woocommerce-form.woocommerce-form-login.lost_reset_password label, body .woocommerce-form.woocommerce-form-register.login label, body .woocommerce-form.woocommerce-form-register.register label, body .woocommerce-form.woocommerce-form-register.lost_reset_password label,
+body .woocommerce-form.woocommerce-form-login.login label, body .woocommerce-form.woocommerce-form-login.register label, body .woocommerce-form.woocommerce-form-login.lost_reset_password label,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields label,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields label,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order label, body .woocommerce-form.woocommerce-form-register.login label, body .woocommerce-form.woocommerce-form-register.register label, body .woocommerce-form.woocommerce-form-register.lost_reset_password label,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields label,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields label,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order label,
 body .woocommerce-form .woocommerce-ResetPassword.login label,
 body .woocommerce-form .woocommerce-ResetPassword.register label,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password label,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields label,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields label,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order label,
+body .woocommerce-form .woocommerce-checkout.login label,
+body .woocommerce-form .woocommerce-checkout.register label,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password label,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields label,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields label,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order label,
 body .woocommerce.woocommerce-form-login.login label,
 body .woocommerce.woocommerce-form-login.register label,
 body .woocommerce.woocommerce-form-login.lost_reset_password label,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields label,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields label,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order label,
 body .woocommerce.woocommerce-form-register.login label,
 body .woocommerce.woocommerce-form-register.register label,
 body .woocommerce.woocommerce-form-register.lost_reset_password label,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields label,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields label,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order label,
 body .woocommerce .woocommerce-ResetPassword.login label,
 body .woocommerce .woocommerce-ResetPassword.register label,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password label {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password label,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields label,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields label,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order label,
+body .woocommerce .woocommerce-checkout.login label,
+body .woocommerce .woocommerce-checkout.register label,
+body .woocommerce .woocommerce-checkout.lost_reset_password label,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields label,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields label,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order label {
   font-weight: bold;
   letter-spacing: 1px;
   -webkit-margin-start: 0.2em;
@@ -506,88 +745,334 @@ body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-login.login input::-webkit-input-placeholder,
-body .woocommerce-form.woocommerce-form-login.login input, body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.login input,
+body .woocommerce-form.woocommerce-form-login.login textarea,
+body .woocommerce-form.woocommerce-form-login.login .select2-selection, body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-login.register input::-webkit-input-placeholder,
-body .woocommerce-form.woocommerce-form-login.register input, body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.register input,
+body .woocommerce-form.woocommerce-form-login.register textarea,
+body .woocommerce-form.woocommerce-form-login.register .select2-selection, body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-login.lost_reset_password input::-webkit-input-placeholder,
-body .woocommerce-form.woocommerce-form-login.lost_reset_password input, body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.lost_reset_password input,
+body .woocommerce-form.woocommerce-form-login.lost_reset_password textarea,
+body .woocommerce-form.woocommerce-form-login.lost_reset_password .select2-selection,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .select2-selection, body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-register.login input::-webkit-input-placeholder,
-body .woocommerce-form.woocommerce-form-register.login input, body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.login input,
+body .woocommerce-form.woocommerce-form-register.login textarea,
+body .woocommerce-form.woocommerce-form-register.login .select2-selection, body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-register.register input::-webkit-input-placeholder,
-body .woocommerce-form.woocommerce-form-register.register input, body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.register input,
+body .woocommerce-form.woocommerce-form-register.register textarea,
+body .woocommerce-form.woocommerce-form-register.register .select2-selection, body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input::-webkit-input-placeholder,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input,
+body .woocommerce-form.woocommerce-form-register.lost_reset_password textarea,
+body .woocommerce-form.woocommerce-form-register.lost_reset_password .select2-selection,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce-form .woocommerce-ResetPassword.login input:-webkit-autofill,
 body .woocommerce-form .woocommerce-ResetPassword.login input:-webkit-autofill:hover,
 body .woocommerce-form .woocommerce-ResetPassword.login input:-webkit-autofill:focus,
 body .woocommerce-form .woocommerce-ResetPassword.login input::-webkit-input-placeholder,
 body .woocommerce-form .woocommerce-ResetPassword.login input,
+body .woocommerce-form .woocommerce-ResetPassword.login textarea,
+body .woocommerce-form .woocommerce-ResetPassword.login .select2-selection,
 body .woocommerce-form .woocommerce-ResetPassword.register input:-webkit-autofill,
 body .woocommerce-form .woocommerce-ResetPassword.register input:-webkit-autofill:hover,
 body .woocommerce-form .woocommerce-ResetPassword.register input:-webkit-autofill:focus,
 body .woocommerce-form .woocommerce-ResetPassword.register input::-webkit-input-placeholder,
 body .woocommerce-form .woocommerce-ResetPassword.register input,
+body .woocommerce-form .woocommerce-ResetPassword.register textarea,
+body .woocommerce-form .woocommerce-ResetPassword.register .select2-selection,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input::-webkit-input-placeholder,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input,
+body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password textarea,
+body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .select2-selection,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .select2-selection,
+body .woocommerce-form .woocommerce-checkout.login input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout.login input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout.login input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout.login input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-checkout.login input,
+body .woocommerce-form .woocommerce-checkout.login textarea,
+body .woocommerce-form .woocommerce-checkout.login .select2-selection,
+body .woocommerce-form .woocommerce-checkout.register input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout.register input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout.register input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout.register input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-checkout.register input,
+body .woocommerce-form .woocommerce-checkout.register textarea,
+body .woocommerce-form .woocommerce-checkout.register .select2-selection,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password textarea,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .select2-selection,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce.woocommerce-form-login.login input:-webkit-autofill,
 body .woocommerce.woocommerce-form-login.login input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-login.login input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-login.login input::-webkit-input-placeholder,
 body .woocommerce.woocommerce-form-login.login input,
+body .woocommerce.woocommerce-form-login.login textarea,
+body .woocommerce.woocommerce-form-login.login .select2-selection,
 body .woocommerce.woocommerce-form-login.register input:-webkit-autofill,
 body .woocommerce.woocommerce-form-login.register input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-login.register input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-login.register input::-webkit-input-placeholder,
 body .woocommerce.woocommerce-form-login.register input,
+body .woocommerce.woocommerce-form-login.register textarea,
+body .woocommerce.woocommerce-form-login.register .select2-selection,
 body .woocommerce.woocommerce-form-login.lost_reset_password input:-webkit-autofill,
 body .woocommerce.woocommerce-form-login.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-login.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-login.lost_reset_password input::-webkit-input-placeholder,
 body .woocommerce.woocommerce-form-login.lost_reset_password input,
+body .woocommerce.woocommerce-form-login.lost_reset_password textarea,
+body .woocommerce.woocommerce-form-login.lost_reset_password .select2-selection,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .select2-selection,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .select2-selection,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce.woocommerce-form-register.login input:-webkit-autofill,
 body .woocommerce.woocommerce-form-register.login input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-register.login input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-register.login input::-webkit-input-placeholder,
 body .woocommerce.woocommerce-form-register.login input,
+body .woocommerce.woocommerce-form-register.login textarea,
+body .woocommerce.woocommerce-form-register.login .select2-selection,
 body .woocommerce.woocommerce-form-register.register input:-webkit-autofill,
 body .woocommerce.woocommerce-form-register.register input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-register.register input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-register.register input::-webkit-input-placeholder,
 body .woocommerce.woocommerce-form-register.register input,
+body .woocommerce.woocommerce-form-register.register textarea,
+body .woocommerce.woocommerce-form-register.register .select2-selection,
 body .woocommerce.woocommerce-form-register.lost_reset_password input:-webkit-autofill,
 body .woocommerce.woocommerce-form-register.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-register.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-register.lost_reset_password input::-webkit-input-placeholder,
 body .woocommerce.woocommerce-form-register.lost_reset_password input,
+body .woocommerce.woocommerce-form-register.lost_reset_password textarea,
+body .woocommerce.woocommerce-form-register.lost_reset_password .select2-selection,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .select2-selection,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .select2-selection,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce .woocommerce-ResetPassword.login input:-webkit-autofill,
 body .woocommerce .woocommerce-ResetPassword.login input:-webkit-autofill:hover,
 body .woocommerce .woocommerce-ResetPassword.login input:-webkit-autofill:focus,
 body .woocommerce .woocommerce-ResetPassword.login input::-webkit-input-placeholder,
 body .woocommerce .woocommerce-ResetPassword.login input,
+body .woocommerce .woocommerce-ResetPassword.login textarea,
+body .woocommerce .woocommerce-ResetPassword.login .select2-selection,
 body .woocommerce .woocommerce-ResetPassword.register input:-webkit-autofill,
 body .woocommerce .woocommerce-ResetPassword.register input:-webkit-autofill:hover,
 body .woocommerce .woocommerce-ResetPassword.register input:-webkit-autofill:focus,
 body .woocommerce .woocommerce-ResetPassword.register input::-webkit-input-placeholder,
 body .woocommerce .woocommerce-ResetPassword.register input,
+body .woocommerce .woocommerce-ResetPassword.register textarea,
+body .woocommerce .woocommerce-ResetPassword.register .select2-selection,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input::-webkit-input-placeholder,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password input {
-  height: 40px;
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password input,
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password textarea,
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password .select2-selection,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .select2-selection,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .select2-selection,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .select2-selection,
+body .woocommerce .woocommerce-checkout.login input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout.login input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout.login input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout.login input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-checkout.login input,
+body .woocommerce .woocommerce-checkout.login textarea,
+body .woocommerce .woocommerce-checkout.login .select2-selection,
+body .woocommerce .woocommerce-checkout.register input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout.register input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout.register input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout.register input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-checkout.register input,
+body .woocommerce .woocommerce-checkout.register textarea,
+body .woocommerce .woocommerce-checkout.register .select2-selection,
+body .woocommerce .woocommerce-checkout.lost_reset_password input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout.lost_reset_password input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout.lost_reset_password input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout.lost_reset_password input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-checkout.lost_reset_password input,
+body .woocommerce .woocommerce-checkout.lost_reset_password textarea,
+body .woocommerce .woocommerce-checkout.lost_reset_password .select2-selection,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .select2-selection,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .select2-selection,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input::-webkit-input-placeholder,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .select2-selection {
+  min-height: 40px;
   font-size: 21px;
   border-radius: 600px;
   border: none;
@@ -600,88 +1085,334 @@ body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-login.login input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-login.login input::placeholder,
-body .woocommerce-form.woocommerce-form-login.login input, body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.login input,
+body .woocommerce-form.woocommerce-form-login.login textarea,
+body .woocommerce-form.woocommerce-form-login.login .select2-selection, body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-login.register input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-login.register input::placeholder,
-body .woocommerce-form.woocommerce-form-login.register input, body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.register input,
+body .woocommerce-form.woocommerce-form-login.register textarea,
+body .woocommerce-form.woocommerce-form-login.register .select2-selection, body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-login.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-login.lost_reset_password input::placeholder,
-body .woocommerce-form.woocommerce-form-login.lost_reset_password input, body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login.lost_reset_password input,
+body .woocommerce-form.woocommerce-form-login.lost_reset_password textarea,
+body .woocommerce-form.woocommerce-form-login.lost_reset_password .select2-selection,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input::placeholder,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields input,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input::placeholder,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields input,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order input,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .select2-selection, body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-register.login input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-register.login input::placeholder,
-body .woocommerce-form.woocommerce-form-register.login input, body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.login input,
+body .woocommerce-form.woocommerce-form-register.login textarea,
+body .woocommerce-form.woocommerce-form-register.login .select2-selection, body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-register.register input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-register.register input::placeholder,
-body .woocommerce-form.woocommerce-form-register.register input, body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register.register input,
+body .woocommerce-form.woocommerce-form-register.register textarea,
+body .woocommerce-form.woocommerce-form-register.register .select2-selection, body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input::placeholder,
 body .woocommerce-form.woocommerce-form-register.lost_reset_password input,
+body .woocommerce-form.woocommerce-form-register.lost_reset_password textarea,
+body .woocommerce-form.woocommerce-form-register.lost_reset_password .select2-selection,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input::placeholder,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields input,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input::placeholder,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields input,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order input,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce-form .woocommerce-ResetPassword.login input:-webkit-autofill,
 body .woocommerce-form .woocommerce-ResetPassword.login input:-webkit-autofill:hover,
 body .woocommerce-form .woocommerce-ResetPassword.login input:-webkit-autofill:focus,
 body .woocommerce-form .woocommerce-ResetPassword.login input::placeholder,
 body .woocommerce-form .woocommerce-ResetPassword.login input,
+body .woocommerce-form .woocommerce-ResetPassword.login textarea,
+body .woocommerce-form .woocommerce-ResetPassword.login .select2-selection,
 body .woocommerce-form .woocommerce-ResetPassword.register input:-webkit-autofill,
 body .woocommerce-form .woocommerce-ResetPassword.register input:-webkit-autofill:hover,
 body .woocommerce-form .woocommerce-ResetPassword.register input:-webkit-autofill:focus,
 body .woocommerce-form .woocommerce-ResetPassword.register input::placeholder,
 body .woocommerce-form .woocommerce-ResetPassword.register input,
+body .woocommerce-form .woocommerce-ResetPassword.register textarea,
+body .woocommerce-form .woocommerce-ResetPassword.register .select2-selection,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input::placeholder,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password input,
+body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password textarea,
+body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .select2-selection,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input::placeholder,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields input,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input::placeholder,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields input,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order input,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .select2-selection,
+body .woocommerce-form .woocommerce-checkout.login input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout.login input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout.login input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout.login input::placeholder,
+body .woocommerce-form .woocommerce-checkout.login input,
+body .woocommerce-form .woocommerce-checkout.login textarea,
+body .woocommerce-form .woocommerce-checkout.login .select2-selection,
+body .woocommerce-form .woocommerce-checkout.register input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout.register input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout.register input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout.register input::placeholder,
+body .woocommerce-form .woocommerce-checkout.register input,
+body .woocommerce-form .woocommerce-checkout.register textarea,
+body .woocommerce-form .woocommerce-checkout.register .select2-selection,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input::placeholder,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password input,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password textarea,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .select2-selection,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input::placeholder,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields input,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .select2-selection,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input::placeholder,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields input,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .select2-selection,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order input,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce.woocommerce-form-login.login input:-webkit-autofill,
 body .woocommerce.woocommerce-form-login.login input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-login.login input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-login.login input::placeholder,
 body .woocommerce.woocommerce-form-login.login input,
+body .woocommerce.woocommerce-form-login.login textarea,
+body .woocommerce.woocommerce-form-login.login .select2-selection,
 body .woocommerce.woocommerce-form-login.register input:-webkit-autofill,
 body .woocommerce.woocommerce-form-login.register input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-login.register input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-login.register input::placeholder,
 body .woocommerce.woocommerce-form-login.register input,
+body .woocommerce.woocommerce-form-login.register textarea,
+body .woocommerce.woocommerce-form-login.register .select2-selection,
 body .woocommerce.woocommerce-form-login.lost_reset_password input:-webkit-autofill,
 body .woocommerce.woocommerce-form-login.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-login.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-login.lost_reset_password input::placeholder,
 body .woocommerce.woocommerce-form-login.lost_reset_password input,
+body .woocommerce.woocommerce-form-login.lost_reset_password textarea,
+body .woocommerce.woocommerce-form-login.lost_reset_password .select2-selection,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input::placeholder,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields input,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .select2-selection,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input::placeholder,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields input,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .select2-selection,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order input,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce.woocommerce-form-register.login input:-webkit-autofill,
 body .woocommerce.woocommerce-form-register.login input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-register.login input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-register.login input::placeholder,
 body .woocommerce.woocommerce-form-register.login input,
+body .woocommerce.woocommerce-form-register.login textarea,
+body .woocommerce.woocommerce-form-register.login .select2-selection,
 body .woocommerce.woocommerce-form-register.register input:-webkit-autofill,
 body .woocommerce.woocommerce-form-register.register input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-register.register input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-register.register input::placeholder,
 body .woocommerce.woocommerce-form-register.register input,
+body .woocommerce.woocommerce-form-register.register textarea,
+body .woocommerce.woocommerce-form-register.register .select2-selection,
 body .woocommerce.woocommerce-form-register.lost_reset_password input:-webkit-autofill,
 body .woocommerce.woocommerce-form-register.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce.woocommerce-form-register.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce.woocommerce-form-register.lost_reset_password input::placeholder,
 body .woocommerce.woocommerce-form-register.lost_reset_password input,
+body .woocommerce.woocommerce-form-register.lost_reset_password textarea,
+body .woocommerce.woocommerce-form-register.lost_reset_password .select2-selection,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input::placeholder,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields input,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .select2-selection,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input::placeholder,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields input,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .select2-selection,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order input,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .select2-selection,
 body .woocommerce .woocommerce-ResetPassword.login input:-webkit-autofill,
 body .woocommerce .woocommerce-ResetPassword.login input:-webkit-autofill:hover,
 body .woocommerce .woocommerce-ResetPassword.login input:-webkit-autofill:focus,
 body .woocommerce .woocommerce-ResetPassword.login input::placeholder,
 body .woocommerce .woocommerce-ResetPassword.login input,
+body .woocommerce .woocommerce-ResetPassword.login textarea,
+body .woocommerce .woocommerce-ResetPassword.login .select2-selection,
 body .woocommerce .woocommerce-ResetPassword.register input:-webkit-autofill,
 body .woocommerce .woocommerce-ResetPassword.register input:-webkit-autofill:hover,
 body .woocommerce .woocommerce-ResetPassword.register input:-webkit-autofill:focus,
 body .woocommerce .woocommerce-ResetPassword.register input::placeholder,
 body .woocommerce .woocommerce-ResetPassword.register input,
+body .woocommerce .woocommerce-ResetPassword.register textarea,
+body .woocommerce .woocommerce-ResetPassword.register .select2-selection,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:hover,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input:-webkit-autofill:focus,
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password input::placeholder,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password input {
-  height: 40px;
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password input,
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password textarea,
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password .select2-selection,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input::placeholder,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields input,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .select2-selection,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input::placeholder,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields input,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .select2-selection,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order input,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .select2-selection,
+body .woocommerce .woocommerce-checkout.login input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout.login input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout.login input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout.login input::placeholder,
+body .woocommerce .woocommerce-checkout.login input,
+body .woocommerce .woocommerce-checkout.login textarea,
+body .woocommerce .woocommerce-checkout.login .select2-selection,
+body .woocommerce .woocommerce-checkout.register input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout.register input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout.register input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout.register input::placeholder,
+body .woocommerce .woocommerce-checkout.register input,
+body .woocommerce .woocommerce-checkout.register textarea,
+body .woocommerce .woocommerce-checkout.register .select2-selection,
+body .woocommerce .woocommerce-checkout.lost_reset_password input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout.lost_reset_password input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout.lost_reset_password input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout.lost_reset_password input::placeholder,
+body .woocommerce .woocommerce-checkout.lost_reset_password input,
+body .woocommerce .woocommerce-checkout.lost_reset_password textarea,
+body .woocommerce .woocommerce-checkout.lost_reset_password .select2-selection,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input::placeholder,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields input,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .select2-selection,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input::placeholder,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields input,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .select2-selection,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:hover,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input:-webkit-autofill:focus,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input::placeholder,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order input,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .select2-selection {
+  min-height: 40px;
   font-size: 21px;
   border-radius: 600px;
   border: none;
@@ -690,19 +1421,95 @@ body .woocommerce .woocommerce-ResetPassword.lost_reset_password input {
   margin-bottom: 8px;
 }
 
-body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form.woocommerce-form-login.login textarea, body .woocommerce-form.woocommerce-form-login.register textarea, body .woocommerce-form.woocommerce-form-login.lost_reset_password textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields textarea,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order textarea, body .woocommerce-form.woocommerce-form-register.login textarea, body .woocommerce-form.woocommerce-form-register.register textarea, body .woocommerce-form.woocommerce-form-register.lost_reset_password textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields textarea,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order textarea,
+body .woocommerce-form .woocommerce-ResetPassword.login textarea,
+body .woocommerce-form .woocommerce-ResetPassword.register textarea,
+body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields textarea,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order textarea,
+body .woocommerce-form .woocommerce-checkout.login textarea,
+body .woocommerce-form .woocommerce-checkout.register textarea,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields textarea,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order textarea,
+body .woocommerce.woocommerce-form-login.login textarea,
+body .woocommerce.woocommerce-form-login.register textarea,
+body .woocommerce.woocommerce-form-login.lost_reset_password textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields textarea,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order textarea,
+body .woocommerce.woocommerce-form-register.login textarea,
+body .woocommerce.woocommerce-form-register.register textarea,
+body .woocommerce.woocommerce-form-register.lost_reset_password textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields textarea,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order textarea,
+body .woocommerce .woocommerce-ResetPassword.login textarea,
+body .woocommerce .woocommerce-ResetPassword.register textarea,
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields textarea,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order textarea,
+body .woocommerce .woocommerce-checkout.login textarea,
+body .woocommerce .woocommerce-checkout.register textarea,
+body .woocommerce .woocommerce-checkout.lost_reset_password textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields textarea,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order textarea {
+  border-radius: 2px;
+}
+
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce-form .woocommerce-ResetPassword.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce-form .woocommerce-ResetPassword.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-checkout.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-checkout.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce.woocommerce-form-register.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce .woocommerce-ResetPassword.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
 body .woocommerce .woocommerce-ResetPassword.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-checkout.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-checkout.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-checkout.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -717,87 +1524,237 @@ body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-fo
 body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
-body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"], body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce-form .woocommerce-ResetPassword.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form .woocommerce-ResetPassword.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce-form .woocommerce-ResetPassword.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form .woocommerce-ResetPassword.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-checkout.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-checkout.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-checkout.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-checkout.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce.woocommerce-form-login.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce.woocommerce-form-login.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce.woocommerce-form-login.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce.woocommerce-form-register.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce.woocommerce-form-register.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce.woocommerce-form-register.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce.woocommerce-form-register.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce .woocommerce-ResetPassword.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce .woocommerce-ResetPassword.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce .woocommerce-ResetPassword.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
 body .woocommerce .woocommerce-ResetPassword.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
 body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"] {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-checkout.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-checkout.login .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-checkout.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-checkout.register .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-checkout.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-checkout.lost_reset_password .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"],
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="text"],
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme input[type="password"] {
   margin: 10px 0;
   margin-right: 10px;
   letter-spacing: 1px;
 }
 
-body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-login.register .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.login .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.register .woocommerce-form__input-checkbox, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__input-checkbox,
 body .woocommerce-form .woocommerce-ResetPassword.login .woocommerce-form__input-checkbox,
 body .woocommerce-form .woocommerce-ResetPassword.register .woocommerce-form__input-checkbox,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-checkout.login .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-checkout.register .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__input-checkbox,
 body .woocommerce.woocommerce-form-login.login .woocommerce-form__input-checkbox,
 body .woocommerce.woocommerce-form-login.register .woocommerce-form__input-checkbox,
 body .woocommerce.woocommerce-form-login.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-form__input-checkbox,
 body .woocommerce.woocommerce-form-register.login .woocommerce-form__input-checkbox,
 body .woocommerce.woocommerce-form-register.register .woocommerce-form__input-checkbox,
 body .woocommerce.woocommerce-form-register.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-form__input-checkbox,
 body .woocommerce .woocommerce-ResetPassword.login .woocommerce-form__input-checkbox,
 body .woocommerce .woocommerce-ResetPassword.register .woocommerce-form__input-checkbox,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__input-checkbox {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-checkout.login .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-checkout.register .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-checkout.lost_reset_password .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .woocommerce-form__input-checkbox,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-form__input-checkbox {
   width: 20px;
   height: 20px;
   margin: 1em 0;
   margin-right: 10px;
 }
 
-body .woocommerce-form.woocommerce-form-login.login .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-login.register .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.login .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.register .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-login.register .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.login .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.register .woocommerce-LostPassword.lost_password, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password,
 body .woocommerce-form .woocommerce-ResetPassword.login .woocommerce-LostPassword.lost_password,
 body .woocommerce-form .woocommerce-ResetPassword.register .woocommerce-LostPassword.lost_password,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-checkout.login .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-checkout.register .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password,
 body .woocommerce.woocommerce-form-login.login .woocommerce-LostPassword.lost_password,
 body .woocommerce.woocommerce-form-login.register .woocommerce-LostPassword.lost_password,
 body .woocommerce.woocommerce-form-login.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password,
 body .woocommerce.woocommerce-form-register.login .woocommerce-LostPassword.lost_password,
 body .woocommerce.woocommerce-form-register.register .woocommerce-LostPassword.lost_password,
 body .woocommerce.woocommerce-form-register.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password,
 body .woocommerce .woocommerce-ResetPassword.login .woocommerce-LostPassword.lost_password,
 body .woocommerce .woocommerce-ResetPassword.register .woocommerce-LostPassword.lost_password,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-LostPassword.lost_password {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-checkout.login .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-checkout.register .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-checkout.lost_reset_password .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .woocommerce-LostPassword.lost_password,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password {
   padding: 10px 0px;
 }
 
-body .woocommerce-form.woocommerce-form-login.login .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-login.register .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.login .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.register .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form.woocommerce-form-login.login .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-login.register .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-login.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form.woocommerce-form-login .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form.woocommerce-form-login .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.login .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.register .woocommerce-LostPassword.lost_password a, body .woocommerce-form.woocommerce-form-register.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form.woocommerce-form-register .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form.woocommerce-form-register .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a,
 body .woocommerce-form .woocommerce-ResetPassword.login .woocommerce-LostPassword.lost_password a,
 body .woocommerce-form .woocommerce-ResetPassword.register .woocommerce-LostPassword.lost_password a,
 body .woocommerce-form .woocommerce-ResetPassword.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-checkout.login .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-checkout.register .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-checkout.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-checkout .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-checkout .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce-form .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a,
 body .woocommerce.woocommerce-form-login.login .woocommerce-LostPassword.lost_password a,
 body .woocommerce.woocommerce-form-login.register .woocommerce-LostPassword.lost_password a,
 body .woocommerce.woocommerce-form-login.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce.woocommerce-form-login .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce.woocommerce-form-login .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce.woocommerce-form-login .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a,
 body .woocommerce.woocommerce-form-register.login .woocommerce-LostPassword.lost_password a,
 body .woocommerce.woocommerce-form-register.register .woocommerce-LostPassword.lost_password a,
 body .woocommerce.woocommerce-form-register.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce.woocommerce-form-register .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce.woocommerce-form-register .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce.woocommerce-form-register .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a,
 body .woocommerce .woocommerce-ResetPassword.login .woocommerce-LostPassword.lost_password a,
 body .woocommerce .woocommerce-ResetPassword.register .woocommerce-LostPassword.lost_password a,
-body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-LostPassword.lost_password a {
+body .woocommerce .woocommerce-ResetPassword.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-ResetPassword .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-checkout.login .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-checkout.register .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-checkout.lost_reset_password .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-checkout .woocommerce-billing-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-checkout .woocommerce-additional-fields .woocommerce-LostPassword.lost_password a,
+body .woocommerce .woocommerce-checkout .woocommerce-checkout-review-order .woocommerce-LostPassword.lost_password a {
   color: var(--bs-primary);
 }
 
@@ -832,157 +1789,338 @@ body .woocommerce .products {
       flex-wrap: wrap;
 }
 
+body .woocommerce-form .products li,
+body .woocommerce .products li {
+  border-radius: 12px;
+  max-width: 400px;
+}
+
 body .woocommerce-form .products li.product,
 body .woocommerce .products li.product {
   -webkit-box-shadow: 0 5px 9.6px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 9.6px 0px rgba(0, 0, 0, 0.3);
-  margin: 0;
-  -webkit-margin-end: 1em;
-          margin-inline-end: 1em;
-  -webkit-margin-after: 1em;
-          margin-block-end: 1em;
+  margin: 1em !important;
   background: #eee;
-  border-radius: 12px;
   overflow: hidden;
-  width: calc((100% / 4) - 12px);
-  min-height: 470px;
 }
 
-body .woocommerce-form .products li.product:nth-child(4n),
-body .woocommerce .products li.product:nth-child(4n) {
-  -webkit-margin-end: 0;
-          margin-inline-end: 0;
-}
-
-@media screen and (min-width: 1500px) {
+@media screen and (max-width: 752px) {
   body .woocommerce-form .products li.product,
   body .woocommerce .products li.product {
-    width: calc((100% / 5) - 30px);
+    width: 100% !important;
+    margin: 1em 0 !important;
+    position: relative !important;
+  }
+  body .woocommerce-form .products li.product a,
+  body .woocommerce .products li.product a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 !important;
+  }
+  body .woocommerce-form .products li.product a img,
+  body .woocommerce .products li.product a img {
+    height: 100%;
+    width: 100px;
+    margin: 0 !important;
+  }
+  body .woocommerce-form .products li.product a .woocommerce-loop-product__title,
+  body .woocommerce .products li.product a .woocommerce-loop-product__title {
+    font-size: 21px;
+    color: #000;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 110px;
+    right: 0;
+    min-height: 100%;
+  }
+  body .woocommerce-form .products li.product a.add_to_cart_button,
+  body .woocommerce .products li.product a.add_to_cart_button {
+    width: 120px;
+    margin: 1.2em auto;
+    background: var(--bs-secondary);
+    color: var(--bs-light);
+    font-size: 11px;
+    position: absolute !important;
+    right: 10px;
+    bottom: 10px;
+    padding: 14px 16px;
+    z-index: 30;
+    border-radius: 600px;
+  }
+  body .woocommerce-form .products li.product a.add_to_cart_button:hover,
+  body .woocommerce .products li.product a.add_to_cart_button:hover {
+    background: #26ace3;
+  }
+  body .woocommerce-form .products li.product a.add_to_cart_button::after,
+  body .woocommerce .products li.product a.add_to_cart_button::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    font-size: 26px;
+    font-weight: bold;
+    bottom: 8px;
+  }
+  body .woocommerce-form .products li.product a.add_to_cart_button:hover::after,
+  body .woocommerce .products li.product a.add_to_cart_button:hover::after {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+  }
+  body .woocommerce-form .products li.product a span.onsale,
+  body .woocommerce .products li.product a span.onsale {
+    top: 70%;
+    right: unset;
+    left: 10px;
+    height: 25px;
+    width: 25px;
+    font-size: 10px;
+  }
+  body .woocommerce-form .products li.product a span.price,
+  body .woocommerce .products li.product a span.price {
+    position: absolute;
+    left: 110px;
+    bottom: 6px;
+    top: unset;
+    font-size: 18px;
+    color: #000;
+  }
+  body .woocommerce-form .products li.product a.added_to_cart,
+  body .woocommerce .products li.product a.added_to_cart {
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 98;
+    font-size: 24px;
+    text-decoration: overline;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  body .woocommerce-form .products li.product a.added_to_cart:hover,
+  body .woocommerce .products li.product a.added_to_cart:hover {
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 753px) {
+  body .woocommerce-form .products li.product,
+  body .woocommerce .products li.product {
+    min-height: 470px;
+  }
+}
+
+@media screen and (min-width: 753px) and (min-width: 753px) and (max-width: 766px) {
+  body .woocommerce-form .products li.product,
+  body .woocommerce .products li.product {
+    width: calc((100% / 2) - 32px) !important;
+  }
+  body .woocommerce-form .products li.product:nth-child(4n),
+  body .woocommerce .products li.product:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 753px) and (min-width: 766px) and (max-width: 1500px) {
+  body .woocommerce-form .products li.product,
+  body .woocommerce .products li.product {
+    width: calc((100% / 3) - 34px) !important;
+  }
+  body .woocommerce-form .products li.product:nth-child(4n),
+  body .woocommerce .products li.product:nth-child(4n) {
+    margin-right: 0;
+  }
+  body .woocommerce-form .products li.product:nth-child(3n),
+  body .woocommerce .products li.product:nth-child(3n) {
+    margin-right: 1em !important;
+  }
+}
+
+@media screen and (min-width: 753px) and (min-width: 1500px) {
+  body .woocommerce-form .products li.product,
+  body .woocommerce .products li.product {
+    width: calc((100% / 5) - 34px) !important;
   }
   body .woocommerce-form .products li.product:nth-child(5n),
   body .woocommerce .products li.product:nth-child(5n) {
-    -webkit-margin-end: 0;
-            margin-inline-end: 0;
+    margin-right: 0;
+  }
+  body .woocommerce-form .products li.product:nth-child(4n),
+  body .woocommerce .products li.product:nth-child(4n) {
+    margin-right: 1em !important;
   }
 }
 
-body .woocommerce-form .products li.product a,
-body .woocommerce .products li.product a {
-  display: block;
+@media screen and (min-width: 753px) {
+  body .woocommerce-form .products li.product a,
+  body .woocommerce .products li.product a {
+    display: block;
+  }
+  body .woocommerce-form .products li.product a:hover,
+  body .woocommerce .products li.product a:hover {
+    text-decoration: none !important;
+  }
+  body .woocommerce-form .products li.product a .woocommerce-loop-product__title,
+  body .woocommerce .products li.product a .woocommerce-loop-product__title {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  body .woocommerce-form .products li.product a span.price,
+  body .woocommerce .products li.product a span.price {
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    color: #000;
+  }
+  body .woocommerce-form .products li.product a span.price ins,
+  body .woocommerce .products li.product a span.price ins {
+    text-decoration: none;
+  }
+  body .woocommerce-form .products li.product a img,
+  body .woocommerce .products li.product a img {
+    height: 315px;
+  }
+  body .woocommerce-form .products li.product .add_to_cart_button,
+  body .woocommerce .products li.product .add_to_cart_button {
+    width: 80%;
+    margin: 1.2em auto;
+    background: var(--bs-secondary);
+    color: var(--bs-light);
+    font-size: 11px;
+    position: relative;
+    bottom: 0;
+    position: relative;
+    padding: 14px 16px;
+    z-index: 30;
+    border-radius: 600px;
+  }
+  body .woocommerce-form .products li.product .add_to_cart_button:hover,
+  body .woocommerce .products li.product .add_to_cart_button:hover {
+    background: #26ace3;
+  }
+  body .woocommerce-form .products li.product .add_to_cart_button::after,
+  body .woocommerce .products li.product .add_to_cart_button::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    font-size: 26px;
+    font-weight: bold;
+    bottom: 8px;
+  }
+  body .woocommerce-form .products li.product .add_to_cart_button:hover::after,
+  body .woocommerce .products li.product .add_to_cart_button:hover::after {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+  }
+  body .woocommerce-form .products li.product .onsale,
+  body .woocommerce .products li.product .onsale {
+    top: 296px;
+    right: 10%;
+    height: 50px;
+    width: 50px;
+    z-index: 99;
+  }
+  body .woocommerce-form .products li.product .added_to_cart,
+  body .woocommerce .products li.product .added_to_cart {
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    display: block;
+    color: #fff;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 98;
+    font-size: 24px;
+    text-decoration: overline;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: unset;
+    height: 315px;
+  }
+  body .woocommerce-form .products li.product .added_to_cart:hover,
+  body .woocommerce .products li.product .added_to_cart:hover {
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-decoration: underline;
+  }
 }
 
-body .woocommerce-form .products li.product a:hover,
-body .woocommerce .products li.product a:hover {
-  text-decoration: none !important;
-}
-
-body .woocommerce-form .products li.product a .woocommerce-loop-product__title,
-body .woocommerce .products li.product a .woocommerce-loop-product__title {
-  text-align: center;
-  font-size: 18px;
-  color: #000;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-
-body .woocommerce-form .products li.product a span.price,
-body .woocommerce .products li.product a span.price {
-  text-align: center;
-  display: block;
-  font-size: 18px;
-  color: #000;
-}
-
-body .woocommerce-form .products li.product a span.price ins,
-body .woocommerce .products li.product a span.price ins {
-  text-decoration: none;
-}
-
-body .woocommerce-form .products li.product a img,
-body .woocommerce .products li.product a img {
-  height: 315px;
-}
-
-body .woocommerce-form .products li.product .add_to_cart_button,
-body .woocommerce .products li.product .add_to_cart_button {
-  width: 80%;
-  margin: 1.2em auto;
-  background: var(--bs-secondary);
-  color: var(--bs-light);
-  font-size: 11px;
-  position: relative;
-  bottom: 0;
-  position: relative;
-  padding: 14px 16px;
-  z-index: 30;
-  border-radius: 600px;
-}
-
-body .woocommerce-form .products li.product .add_to_cart_button:hover,
-body .woocommerce .products li.product .add_to_cart_button:hover {
-  background: #26ace3;
-}
-
-body .woocommerce-form .products li.product .add_to_cart_button::after,
-body .woocommerce .products li.product .add_to_cart_button::after {
-  content: "+";
-  position: absolute;
-  right: 16px;
-  font-size: 26px;
-  font-weight: bold;
-  bottom: 8px;
-}
-
-body .woocommerce-form .products li.product .add_to_cart_button:hover::after,
-body .woocommerce .products li.product .add_to_cart_button:hover::after {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-}
-
-body .woocommerce-form .products li.product .onsale,
-body .woocommerce .products li.product .onsale {
-  top: 296px;
-  right: 10%;
-  height: 50px;
-  width: 50px;
-  z-index: 99;
-}
-
-body .woocommerce-form .products li.product .added_to_cart,
-body .woocommerce .products li.product .added_to_cart {
-  -webkit-transition: all 0.3 ease-in-out;
-  transition: all 0.3 ease-in-out;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  display: block;
-  color: #fff;
-  width: 100%;
+body .woocommerce-form .single-product .product,
+body .woocommerce .single-product .product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 98;
-  font-size: 24px;
-  text-decoration: overline;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: unset;
-  height: 315px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-body .woocommerce-form .products li.product .added_to_cart:hover,
-body .woocommerce .products li.product .added_to_cart:hover {
-  font-weight: bolder;
-  letter-spacing: 1px;
-  text-decoration: underline;
+body .woocommerce-form .single-product .product .summary.entry-summary,
+body .woocommerce .single-product .product .summary.entry-summary {
+  padding: 0 60px;
+}
+
+body .woocommerce-form .single-product .product .summary.entry-summary .price,
+body .woocommerce .single-product .product .summary.entry-summary .price {
+  font-weight: bold;
+  color: #000;
+}
+
+body .woocommerce-form .single-product .product .summary.entry-summary .price ins,
+body .woocommerce .single-product .product .summary.entry-summary .price ins {
+  text-decoration: none;
+}
+
+body .woocommerce-form .single-product .product .summary.entry-summary .input-text.qty.text,
+body .woocommerce .single-product .product .summary.entry-summary .input-text.qty.text {
+  background: #eee;
+  border: 0;
+  border-radius: 3px;
+  padding: 6px 8px;
+  font-weight: bold;
 }
 
 body .h-100 {

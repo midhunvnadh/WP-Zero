@@ -1,17 +1,21 @@
 <div class="container-fluid app-start">
+    <?php get_template_part("template-parts/sm-navigation"); ?>
     <div class="row main-row">
         <div class="main-col-1 col-lg-2 col-sm-12 px-0">
             <?php get_sidebar(); ?>
         </div>
         <div class="main-col-2 col-lg-10 col-sm-12 px-0">
-            <div id="content" class="site-content">
+            <div id="content" class="site-content container-fluid">
                 <main id="main" class="site-main" role="main">
                     <header class="site-header py-4" id="site-header">
                         <div class="row">
                             <div class="col-lg-8 col-sm-12 px-0 text-center">
-                                <div class="container">
+                                <div class="container sm-header-holder">
+                                    <div class="nav-toggle-holder">
+                                        <span class="navigation-toggle"><i class="fas fa-bars"></i></span>
+                                    </div>
                                     <div class="content">
-                                        <h5><?php bloginfo('title'); ?> - <?php bloginfo('description'); ?></h5>
+                                        <h5><?php bloginfo('title'); ?><span class="site-desc"> - <?php bloginfo('description'); ?></span></h5>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                     </div>
                                 </div>

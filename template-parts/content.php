@@ -6,7 +6,7 @@
 					<?php
 					if (has_post_thumbnail()) :
 					?>
-						<div class="image" style="background-image: url(<?php the_post_thumbnail() ?>);"></div>
+						<div class="image" style="background-image: url(<?php the_post_thumbnail_url() ?>);"></div>
 					<?php
 					else :
 					?>
