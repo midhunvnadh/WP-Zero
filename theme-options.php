@@ -4,7 +4,7 @@ add_action('admin_init', 'stp_api_settings_init');
 
 function stp_api_add_admin_menu()
 {
-    add_options_page('Settings API Page', 'Settings API Page', 'manage_options', 'settings-api-page', 'stp_api_options_page');
+    add_options_page('PSCMonk Management', 'PSCMonk Management', 'manage_options', 'settings-api-page', 'stp_api_options_page');
 }
 
 function stp_api_settings_init()

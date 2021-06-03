@@ -226,6 +226,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    padding: 0 12px;
   }
   .site-footer {
     background: #213141;
@@ -308,6 +309,10 @@ body {
   .rounded-circle {
     border-radius: 50%;
     &.icon {
+      background: #063a59;
+      i {
+        color: #fff !important;
+      }
       transition: all 0.3s ease-in-out;
       display: flex;
       justify-content: center;
@@ -898,5 +903,8 @@ body {
   .searchform {
     display: flex;
     width: 100%;
+  }
+  .wp-block-file__button {
+    font-size: 19px !important;
   }
 }

@@ -274,6 +274,7 @@ body .searchform {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  padding: 0 12px;
 }
 
 body .site-footer {
@@ -374,6 +375,7 @@ body .rounded-circle {
 }
 
 body .rounded-circle.icon {
+  background: #063a59;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   display: -webkit-box;
@@ -388,6 +390,10 @@ body .rounded-circle.icon {
   height: 35px;
   width: 35px;
   font-size: 21px;
+}
+
+body .rounded-circle.icon i {
+  color: #fff !important;
 }
 
 body .rounded-circle.icon:hover {
@@ -2179,5 +2185,9 @@ body .searchform {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+}
+
+body .wp-block-file__button {
+  font-size: 19px !important;
 }
 /*# sourceMappingURL=style.css.map */

@@ -40,7 +40,7 @@ $options = get_option('stp_api_settings');
 			</span>
 		</a>
 	</div>
-	<div class="container-fluid my-4 menu">
+	<div class="container-fluid my-3 menu">
 		<?php
 		wp_nav_menu(array(
 			'theme_location' => 'menu-1',
