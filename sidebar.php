@@ -1,9 +1,12 @@
 <aside class="site-side p-3 text-center">
 	<h3 class="site-title font-weight-bold py-1"></h3>
-	<div class="site-icon-disp"></div>
-	<p class="site-desc text-secondary pb-3"><?php bloginfo('description'); ?>. The answer is yes. You could run php code in editor.
-
-
+	<?php if (has_site_icon()) : ?>
+		<div>
+			<img src="<?php site_icon_url(); ?>" class="site-icon-disp" />
+		</div>
+	<?php endif; ?>
+	<p class="site-desc text-secondary pb-3">
+		Be a Monk. Get a Job. A space where you can masterin all KPSC examinations.
 	</p>
 	<div class="icons d-flex">
 		<div class="icon btn btn-light m-1 rounded-circle">
@@ -43,7 +46,4 @@
 		));
 		?>
 	</div>
-
-	<nav class="main-navigation">
-	</nav>
 </aside>

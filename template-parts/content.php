@@ -25,8 +25,6 @@
 						<?php echo readingTime(get_the_content()); ?>&nbsp;
 						<i class="fas fa-circle" style="font-size: 6px;"></i>
 						&nbsp;<?php echo getPostViews(get_the_ID()); ?> &nbsp;
-						<i class="fas fa-circle" style="font-size: 6px;"></i>
-						&nbsp; 10 pages &nbsp;
 					</div>
 					<div class="entry-content">
 						<?php echo implode(' ', array_slice(explode(' ', get_the_excerpt()), 0, 10)) . "..."; ?>

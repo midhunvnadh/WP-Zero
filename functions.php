@@ -15,6 +15,7 @@ function untheme_nav_init()
 {
 	register_nav_menus(array(
 		'menu-1' => 'Primary Menu',
+		'footer-1' => 'Footer',
 	));
 }
 add_action('init', 'untheme_nav_init');

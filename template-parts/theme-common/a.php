@@ -16,7 +16,7 @@
                                     </div>
                                     <div class="content">
                                         <h5><?php bloginfo('title'); ?><span class="site-desc"> - <?php bloginfo('description'); ?></span></h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Tranform yourself from an aspirant to a monk</p>
                                     </div>
                                 </div>
                             </div>

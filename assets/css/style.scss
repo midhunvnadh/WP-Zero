@@ -93,10 +93,17 @@ body {
           }
           .site-icon-disp {
             margin: 15px 0;
+            max-height: 150px;
+            max-width: 150px;
             min-height: 150px;
             min-width: 150px;
             background: #fff;
             border-radius: 50%;
+            overflow: hidden;
+            img {
+              height: 100%;
+              width: 100%;
+            }
           }
           .menu {
             padding: 2em 0;
@@ -225,6 +232,27 @@ body {
     text-align: center;
     color: #6c757d;
     padding: 1em 2em;
+    ul {
+      padding-inline-start: 0;
+      list-style-type: none;
+      li {
+        display: inline-block;
+        a {
+          color: #6c757d;
+        }
+        &:after {
+          content: " | ";
+          display: inline-block;
+          margin-inline-start: 0.2em;
+          margin-inline-end: 0.2em;
+        }
+        &:last-child {
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
   }
   a {
     text-decoration: none;
@@ -262,6 +290,9 @@ body {
           width: 100%;
           border-radius: 3px;
         }
+      }
+      h6 {
+        color: #075385;
       }
     }
     &:hover {
