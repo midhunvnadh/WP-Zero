@@ -504,10 +504,10 @@ body {
   }
   .woocommerce-form,
   .woocommerce {
+    .input-text#coupon_code {
+      width: 200px !important;
+    }
     .woocommerce-cart-form__cart-item {
-      .input-text#coupon_code {
-        width: 200px !important;
-      }
       input {
         min-height: 40px;
         font-size: 18px;

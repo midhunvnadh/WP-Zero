@@ -2,7 +2,7 @@
     <div class="">
         <div class="container-image-holder">
             <?php if (has_post_thumbnail()) : ?>
-                <img src="<?php the_post_thumbnail() ?>" class="img-fluid" />
+                <img src="<?php the_post_thumbnail_url() ?>" class="img-fluid" />
             <?php endif; ?>
         </div>
         <header class="entry-header py-3">

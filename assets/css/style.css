@@ -595,8 +595,8 @@ body .woocommerce .woocommerce-MyAccount-content {
   border-radius: 6px;
 }
 
-body .woocommerce-form .woocommerce-cart-form__cart-item .input-text#coupon_code,
-body .woocommerce .woocommerce-cart-form__cart-item .input-text#coupon_code {
+body .woocommerce-form .input-text#coupon_code,
+body .woocommerce .input-text#coupon_code {
   width: 200px !important;
 }
 
