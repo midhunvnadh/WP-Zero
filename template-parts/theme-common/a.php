@@ -1,3 +1,6 @@
+<?php
+$options = get_option('stp_api_settings');
+?>
 <div class="container-fluid app-start">
     <?php get_template_part("template-parts/sm-navigation"); ?>
     <div class="row main-row">
@@ -16,7 +19,11 @@
                                     </div>
                                     <div class="content">
                                         <h5><?php bloginfo('title'); ?><span class="site-desc"> - <?php bloginfo('description'); ?></span></h5>
-                                        <p>Tranform yourself from an aspirant to a monk</p>
+                                        <p><?php
+                                            $options = get_option('stp_api_settings');
+                                            $value = $options['monk_desc_short'] === "" ? "Enter the Value in settings!" : $options['monk_desc_short'];
+                                            echo $value;
+                                            ?></p>
                                     </div>
                                 </div>
                             </div>

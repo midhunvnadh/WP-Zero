@@ -1,3 +1,6 @@
+<?php
+$options = get_option('stp_api_settings');
+?>
 <aside class="site-side p-3 text-center">
 	<h3 class="site-title font-weight-bold py-1"></h3>
 	<?php if (has_site_icon()) : ?>
@@ -6,34 +9,36 @@
 		</div>
 	<?php endif; ?>
 	<p class="site-desc text-secondary pb-3">
-		Be a Monk. Get a Job. A space where you can masterin all KPSC examinations.
+		<?php
+		$value = $options['monk_desc_long'] === "" ? "Enter the Value in settings!" : $options['monk_desc_long'];
+		echo $value;
+		?>
 	</p>
 	<div class="icons d-flex">
-		<div class="icon btn btn-light m-1 rounded-circle">
+		<?php $option = $options["yt_link"] == "" ? "https://youtube.com" : $options["yt_link"]; ?>
+		<a class="icon btn btn-light m-1 rounded-circle" href="<?php echo $option; ?>" target="_blank">
+			<span class="text-success">
+				<i class="fab fa-youtube text-success"></i>
+			</span>
+		</a>
+		<?php $option = $options["tg_link"] == "" ? "https://telegram.org" : $options["tg_link"]; ?>
+		<a class="icon btn btn-light m-1 rounded-circle" href="<?php echo $option; ?>" target="_blank">
+			<span class=" text-success">
+				<i class="fab fa-telegram text-success"></i>
+			</span>
+		</a>
+		<?php $option = $options["fb_link"] == "" ? "https://fb.com" : $options["fb_link"]; ?>
+		<a class="icon btn btn-light m-1 rounded-circle" href="<?php echo $option; ?>" target="_blank">
 			<span class="text-success">
 				<i class="fab fa-facebook-f text-success"></i>
 			</span>
-		</div>
-		<div class="icon btn btn-light m-1 rounded-circle">
+		</a>
+		<?php $option = $options["tw_link"] == "" ? "https://twitter.com" : $options["tw_link"]; ?>
+		<a class="icon btn btn-light m-1 rounded-circle" href="<?php echo $option; ?>" target="_blank">
 			<span class="text-success">
-				<i class="fab fa-facebook-f text-success"></i>
+				<i class="fab fa-twitter text-success"></i>
 			</span>
-		</div>
-		<div class="icon btn btn-light m-1 rounded-circle">
-			<span class="text-success">
-				<i class="fab fa-facebook-f text-success"></i>
-			</span>
-		</div>
-		<div class="icon btn btn-light m-1 rounded-circle">
-			<span class="text-success">
-				<i class="fab fa-facebook-f text-success"></i>
-			</span>
-		</div>
-		<div class="icon btn btn-light m-1 rounded-circle">
-			<span class="text-success">
-				<i class="fab fa-facebook-f text-success"></i>
-			</span>
-		</div>
+		</a>
 	</div>
 	<div class="container-fluid my-4 menu">
 		<?php

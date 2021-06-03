@@ -308,11 +308,16 @@ body {
   .rounded-circle {
     border-radius: 50%;
     &.icon {
+      transition: all 0.3s ease-in-out;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 35px;
       width: 35px;
+      font-size: 21px;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .widgets-sidebar {
